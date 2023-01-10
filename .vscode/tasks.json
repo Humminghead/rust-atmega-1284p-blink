@@ -11,16 +11,16 @@
             "label": "rust: cargo build"
         },
         {
-            "label": "flash binary",
+            "label": "flush binary",
             "type": "shell",
             "command": "avrdude",
             "args": [
                 "-p",
                 "atmega1284p",
-                "-D",
+                // "-D", //Disable auto erase for flash memory
                 "-c",
                 "jtag2",
-                "-Uflash:w:./target/debug/blink-led-1284.elf:e",
+                "-Uflash:w:./target/avr-atmega1284p/debug/blink-led-1284.elf:e",
                 "-v"
             ],
             "dependsOn": "build"
