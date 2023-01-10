@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cargo",
+            "command": "build",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "rust: cargo build"
+        },
+        {
+            "label": "flash binary",
+            "type": "shell",
+            "command": "avrdude",
+            "args": [
+                "-p",
+                "atmega1284p",
+                "-D",
+                "-c",
+                "jtag2",
+                "-Uflash:w:./target/debug/blink-led-1284.elf:e",
+                "-v"
+            ],
+            "dependsOn": "build"
+        },
+        {
+            "label": "run gdbserver",
+            "type": "shell",
+            "command": "avarice",
+            "args": [
+                "--jtag",
+                "usb:5426",
+                "--mkII",
+                ": 4242"
+            ]
+        }
+    ]
+}
