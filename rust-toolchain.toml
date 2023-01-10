@@ -1,0 +1,5 @@
+[toolchain]
+#https://github.com/rust-lang/rust/issues/88252#issuecomment-977001959
+#https://avroxi.de/post/getting-started/
+channel = "nightly-2021-01-07"
+components = ["rust-src"]
