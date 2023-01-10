@@ -8,12 +8,13 @@
             "type": "gdb",
             "request": "attach",
             "name": "AVR GDB",
-            "executable": "./bin/executable",
+            "gdbpath": "/usr/bin/avr-gdb",
+            "executable": "./target/avr-atmega1284p/debug/blink-led-1284.elf",
             "target": ":4242",
             "remote": true,
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "parseText",
-            "preLaunchTask": "build binary"
+            // "preLaunchTask": ["rust: cargo build", "build binary"]
         }
     ]
 }
