@@ -35,6 +35,24 @@
                 "--mkII",
                 ": 4242"
             ]
+        },
+        {
+            "label": "sleep",
+            "type": "shell",
+            "command": "sleep",
+            "args": [
+                "5"
+            ]
+        },
+        {
+            "label": "buid and flush",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "rust: cargo build",
+                "flush binary",
+                "run gdbserver"
+            ]
         }
     ]
 }
