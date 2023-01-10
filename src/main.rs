@@ -17,11 +17,16 @@ use panic_abort as _;
 extern "C" fn eh_personality() {}
 
 #[no_mangle]
-pub extern fn main() {
+pub extern "C" fn main() {
+    let mut counter = 0;
     loop {
         // port::B5::set_high();
         // ruduino::delay::delay_ms(1000);
         // port::B5::set_low();
         // ruduino::delay::delay_ms(1000);
+        counter += 1;
+        if counter > 1000000 {
+            counter = 0;
+        }
     }
 }
