@@ -5,6 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "AVR CPPDBG",
+            "miDebuggerPath": "/usr/bin/avr-gdb",
+            "miDebuggerServerAddress": "localhost:4242",
+            "stopAtEntry": true,
+            "program": "./target/avr-atmega1284p/debug/blink-led-1284.elf",
+            "cwd": "${workspaceRoot}"
+        },
+        {
             "type": "gdb",
             "request": "attach",
             "name": "AVR GDB",
@@ -15,7 +25,9 @@
             "remote": true,
             "cwd": "${workspaceRoot}",
             "valuesFormatting": "parseText",
-            // "preLaunchTask": "run gdbserver"                        
+            "autorun": [
+                "interrupt",
+            ]
         }
     ]
 }
