@@ -41,7 +41,7 @@
             "type": "shell",
             "command": "sleep",
             "args": [
-                "5"
+                "1"
             ]
         },
         {
@@ -50,8 +50,8 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "rust: cargo build",
-                "flush binary",
-                "run gdbserver"
+                "flush binary"
+                // "run gdbserver"
             ]
         }
     ]
