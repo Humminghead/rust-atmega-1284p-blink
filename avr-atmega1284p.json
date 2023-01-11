@@ -14,8 +14,9 @@
   "eh-frame-header": false,
   "pre-link-args": {
     "gcc": [
-      "-Os",
-      "-mmcu=atmega1284p"
+      "-mmcu=atmega1284p",
+      "-Wl,--as-needed",
+      "-Wl,--verbose"
     ]
   },
   "late-link-args": {
