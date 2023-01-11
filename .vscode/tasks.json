@@ -11,7 +11,7 @@
             "label": "rust: cargo build"
         },
         {
-            "label": "flush binary",
+            "label": "shell: flush binary",
             "type": "shell",
             "command": "avrdude",
             "args": [
@@ -26,7 +26,7 @@
             "dependsOn": "build"
         },
         {
-            "label": "run gdbserver",
+            "label": "shell: run gdbserver",
             "type": "shell",
             "command": "avarice",
             "args": [
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "label": "sleep",
+            "label": "shell: sleep",
             "type": "shell",
             "command": "sleep",
             "args": [
@@ -45,13 +45,12 @@
             ]
         },
         {
-            "label": "buid and flush",
+            "label": "shell: buid and flush",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "rust: cargo build",
-                "flush binary"
-                // "run gdbserver"
+                "shell: flush binary"
             ]
         }
     ]
