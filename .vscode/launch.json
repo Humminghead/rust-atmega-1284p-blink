@@ -13,21 +13,6 @@
             "stopAtEntry": true,
             "program": "./target/avr-atmega1284p/debug/blink-led-1284.elf",
             "cwd": "${workspaceRoot}"
-        },
-        {
-            "type": "gdb",
-            "request": "attach",
-            "name": "AVR GDB",
-            "gdbpath": "/usr/bin/avr-gdb",
-            "stopAtEntry": true,
-            "executable": "./target/avr-atmega1284p/debug/blink-led-1284.elf",
-            "target": ":4242",
-            "remote": true,
-            "cwd": "${workspaceRoot}",
-            "valuesFormatting": "parseText",
-            "autorun": [
-                "interrupt",
-            ]
         }
     ]
 }
