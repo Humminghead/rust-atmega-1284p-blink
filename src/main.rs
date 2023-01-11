@@ -6,8 +6,8 @@
 extern crate panic_halt;
 
 // dev profile: easier to debug panics; can put a breakpoint on `rust_begin_unwind`
-#[cfg(debug_assertions)]
-use panic_halt as _;
+// #[cfg(debug_assertions)]
+// use panic_halt as _;
 
 // release profile: minimize the binary size of the application
 #[cfg(not(debug_assertions))]
@@ -18,10 +18,10 @@ extern "C" fn eh_personality() {}
 
 #[no_mangle]
 pub extern "C" fn main() {
-    let mut counter = 0;
+    let mut counter: u8 = 0;
     loop {
-        counter += 1;
-        if counter > 100000 {
+        counter = counter + 1;
+        if counter > 254 {
             break;
         }
     }
