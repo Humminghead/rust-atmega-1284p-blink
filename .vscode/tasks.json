@@ -2,16 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cargo",
-            "command": "build",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "build"
+            ],
             "problemMatcher": [
                 "$rustc"
             ],
             "group": "build",
-            "label": "rust: cargo build"
+            "label": "Rust: cargo build",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
         },
         {
-            "label": "shell: flush binary",
+            "label": "Shell: flush binary",
             "type": "shell",
             "command": "avrdude",
             "args": [
@@ -26,7 +32,7 @@
             "dependsOn": "build"
         },
         {
-            "label": "shell: run gdbserver",
+            "label": "Shell: run gdbserver",
             "type": "shell",
             "command": "avarice",
             "args": [
@@ -37,7 +43,7 @@
             ]
         },
         {
-            "label": "shell: sleep",
+            "label": "Shell: sleep",
             "type": "shell",
             "command": "sleep",
             "args": [
@@ -45,12 +51,12 @@
             ]
         },
         {
-            "label": "shell: buid and flush",
+            "label": "Shell: buid and flush",
             "type": "shell",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "rust: cargo build",
-                "shell: flush binary"
+                "Rust: cargo build",
+                "Shell: flush binary"
             ]
         }
     ]
