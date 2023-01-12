@@ -18,11 +18,8 @@ extern "C" fn eh_personality() {}
 
 #[no_mangle]
 pub extern "C" fn main() {
-    let mut counter: u8 = 0;
     loop {
-        counter = counter + 1;
-        if counter > 254 {
-            break;
-        }
+        // avr_device::generic
+        // avr_device::atmega1284p
     }
 }
