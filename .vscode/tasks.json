@@ -5,6 +5,21 @@
             "type": "process",
             "command": "cargo",
             "args": [
+                "clean"
+            ],
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "Rust: cargo clean",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            }
+        },
+        {
+            "type": "process",
+            "command": "cargo",
+            "args": [
                 "build"
             ],
             "problemMatcher": [
