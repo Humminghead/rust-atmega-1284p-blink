@@ -36,4 +36,6 @@ features = ["atmega1284p"]
 #https://blog.mbedded.ninja/programming/languages/rust/running-rust-on-microcontrollers/#atmel-avr
 #https://habr.com/ru/post/686168/
 
+#About ATPACK:
+#https://stuvel.eu/post/2021-04-27-atmega328pb-on-gcc/
 
