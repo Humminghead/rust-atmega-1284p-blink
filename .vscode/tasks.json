@@ -73,6 +73,16 @@
                 "Rust: cargo build",
                 "Shell: flush binary"
             ]
+        },
+        {
+            "label": "Shell: buid, flush, run server",
+            "type": "shell",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Rust: cargo build",
+                "Shell: flush binary",
+                "Shell: run gdbserver"
+            ]
         }
     ]
 }
