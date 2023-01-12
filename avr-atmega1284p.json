@@ -16,7 +16,13 @@
     "gcc": [
       "-mmcu=atmega1284p",
       "-Wl,--as-needed",
-      "-Wl,--verbose"
+      "-Wl,--verbose",
+      "-L",
+      "./gcc/dev/atmega1284p",
+      "-B",
+      "./gcc/dev/",
+      "-specs=./gcc/dev/atmega1284p/device-specs/specs-atmega1284p",
+      "-O0"
     ]
   },
   "late-link-args": {
