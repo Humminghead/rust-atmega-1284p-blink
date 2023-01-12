@@ -6,8 +6,8 @@
 extern crate panic_halt;
 
 // dev profile: easier to debug panics; can put a breakpoint on `rust_begin_unwind`
-#[cfg(debug_assertions)]
-use panic_halt as _;
+// #[cfg(debug_assertions)]
+// use panic_halt as _;
 
 // release profile: minimize the binary size of the application
 #[cfg(not(debug_assertions))]
@@ -17,11 +17,9 @@ use panic_abort as _;
 extern "C" fn eh_personality() {}
 
 #[no_mangle]
-pub extern fn main() {
+pub extern "C" fn main() {
     loop {
-        // port::B5::set_high();
-        // ruduino::delay::delay_ms(1000);
-        // port::B5::set_low();
-        // ruduino::delay::delay_ms(1000);
+        // avr_device::generic
+        // avr_device::atmega1284p
     }
 }

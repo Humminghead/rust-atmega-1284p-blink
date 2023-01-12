@@ -20,11 +20,10 @@ lto = true
 lto = true
 #panic = "abort"
 
-#[dependencies.avr-hal-generic]
-#version = ""
-#git = "https://github.com/rahix/avr-hal"
-#rev = "4170a773d4d76cc93433d2455ed8b14e573ebe70"
-#features = ["trinket"]
+[dependencies.avr-device]
+version = "0.3.4"
+features = ["atmega1284p"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
