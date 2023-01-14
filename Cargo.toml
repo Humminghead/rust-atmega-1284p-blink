@@ -24,6 +24,9 @@ lto = true
 version = "0.3.4"
 features = ["atmega1284p"]
 
+[dependencies.ssd1306]
+version = "0.6.0"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
