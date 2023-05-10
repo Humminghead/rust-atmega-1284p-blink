@@ -12,10 +12,12 @@ env:
 jobs:
   build:
 
-    runs-on: humminghead/rust-avr-pipeline:latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+    - name: Setup
+      run: apt install gcc-avr
     - name: Build
       run: cargo build --verbose
     - name: Run tests
