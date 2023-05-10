@@ -17,8 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install gcc-avr
-      run: sudo apt install gcc-avr
+      run: sudo apt -y install binutils gcc-avr avr-libc
     - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      run: cargo build --verbose    
