@@ -5,7 +5,7 @@ version = "0.1.0"
 
 #https://doc.rust-lang.org/stable/rust-by-example/cargo/deps.html
 [dependencies]
-panic-halt = "^0.2.0"    # Panic handler
+panic-halt = "^0.2.0"  # Panic handler
 panic-abort = "^0.3.2"
 #rand = "^0.7.3"
 #kp-lib-rs = { git = "https://github.com/Rahix/avr-hal.git", branch = "main"}
@@ -24,8 +24,8 @@ lto = true
 version = "0.3.4"
 features = ["atmega1284p"]
 
-[dependencies.ssd1306]
-version = "0.6.0"
+[dependencies.display-interface-i2c]
+version = "0.4.0"
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -38,5 +38,3 @@ version = "0.6.0"
 #https://crates.io/crates/ravedude
 #https://blog.mbedded.ninja/programming/languages/rust/running-rust-on-microcontrollers/#atmel-avr
 #https://habr.com/ru/post/686168/
-
-
