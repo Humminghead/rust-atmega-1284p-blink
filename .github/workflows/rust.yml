@@ -19,4 +19,4 @@ jobs:
     - name: Install gcc-avr
       run: sudo apt -y install binutils gcc-avr avr-libc
     - name: Build
-      run: cargo build --verbose    
+      run: cargo build --verbose -Z namespaced-features   
